@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 /*
  * build a todo
  * it should have heading "Todo Item"
@@ -6,29 +7,37 @@
  * once btn clicked, completed should appear next to it
  * click again, it should disappear
  */
-const React = require("react");
-const { useState } = React;
 
 function ToDo() {
   const [item, setItem] = useState([]);
   const [input, setInput] = useState("");
+  const [savedInput, saveInput] = useState("");
   function addItem(e) {
     e.preventDefault();
+    saveInput(input);
+    console.log(item);
     setItem([...item, input]);
-    setInput("");
+    setInput(savedInput);
   }
   return (
-    <div style={{ padding: "20px", maxWidth: "400px" }}>
-      <h1>My Tasks</h1>
+    <>
+      <h1>My Trinkets</h1>
       <form onSubmit={addItem}>
         <input
           type="text"
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="What needs to be done?"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
         />
         <button type="submit">Add</button>
       </form>
-    </div>
+      <ul>
+        {item.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </>
   );
 }
 

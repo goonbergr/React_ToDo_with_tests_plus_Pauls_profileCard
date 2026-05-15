@@ -1,3 +1,4 @@
+/*
 import React, { useState } from "react";
 
 export default function ProfileCard() {
@@ -21,3 +22,4 @@ export default function ProfileCard() {
     </section>
   );
 }
+*/

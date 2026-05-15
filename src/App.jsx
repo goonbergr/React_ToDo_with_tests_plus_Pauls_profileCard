@@ -1,6 +1,5 @@
-import { useState } from "react";
 import "./App.css";
-import ProfileCard from "./components/ProfileCard";
+// import ProfileCard from "./components/ProfileCard";
 import ToDo from "./components/ToDo";
 
 function App() {
