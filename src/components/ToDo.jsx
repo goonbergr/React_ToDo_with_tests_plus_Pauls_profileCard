@@ -89,7 +89,7 @@ function ToDo() {
   console.log(...items);
 
   return (
-    <>
+    <section>
       <h1>My Trinkets</h1>
       <form onSubmit={addItem}>
         <input
@@ -106,7 +106,7 @@ function ToDo() {
           <li>{item}</li>
         ))}
       </ul>
-    </>
+    </section>
   );
 }
 
